@@ -1,0 +1,96 @@
+<%= form_with model: trade do |form| %>
+  <div>
+    <%= form.label :Date %>
+    <%= form.date_field :date %>
+    <!-- <%#= form.date_field :todays_date, value: @trade.todays_date&.strftime('%d-%m-%Y')  %> -->
+  </div>
+
+  <div>
+    <%= form.label :Scrip %>
+    <%= form.text_field :scrip %>
+  </div>
+
+  <div>
+    <%= form.label :Position %>
+    <%= form.text_field :position, ['LONG', 'SHORT'] %>
+  </div>
+
+  <div>
+    <%= form.label :Conviction %>
+    <%= form.text_field :conviction %>
+  </div>
+
+  <div>
+    <%= form.label :Reason %>
+    <%= form.text_field :trade_reason %>
+  </div>
+
+  <div>
+    <%= form.label :Quantity %>
+    <%= form.number_field :quantity %>
+  </div>
+
+  <div>
+    <%= form.label :EntryPrice %>
+    <%= form.number_field :entry_price %>
+  </div>
+
+  <div>
+    <%= form.label :StopLoss %>
+    <%= form.number_field :stoploss %>
+  </div>
+
+  <div>
+    <%= form.label :RiskInPoints %>
+    <%= form.number_field :risk %>
+  </div>
+
+  <div>
+    <%= form.label :Target %>
+    <%= form.number_field :target %>
+  </div>
+
+  <div>
+    <%= form.label :Reward %>
+    <%= form.text_field :reward %>
+  </div>
+
+  <div>
+    <%= form.label :RiskReward %>
+    <%= form.text_field :riskreward %>
+  </div>
+
+  <div>
+    <%= form.label :ExitPrice %>
+    <%= form.number_field :exit_price %>
+  </div>
+
+  <div>
+    <%= form.label :ProfitLoss %>
+    <%= form.select :profit_loss, ['PROFIT', 'LOSS'] %>
+  </div>
+
+  <div>
+    <%= form.label :RR_Achieved %>
+    <%= form.text_field :rr_achieved %>
+  </div>
+
+  <div>
+    <%= form.label :Learning %>
+    <%= form.text_area :learning %>
+  </div>
+  
+  <div>
+    <%= form.label :Mistakes %>
+    <%= form.text_area :mistakes %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+
+<% end %>
+
+  <div>
+    <%= link_to "Back", :back %>
+  </div>

@@ -1,0 +1,53 @@
+<%= render "homes/index" %>
+<table class="table table-bordered">
+  <thead class="table-success">
+    <tr>
+      <th scope="col">S.NO.</th>
+      <th scope="col">DATE</th>
+      <th scope="col">SCRIP</th>
+      <th scope="col">POSITION</th>
+      <th scope="col">CONVICTION</th>
+      <th scope="col">REASON</th>
+      <th scope="col">QUANTITY</th>
+      <th scope="col">ENTRY PRICE</th>
+      <th scope="col">STOPLOSS</th>
+      <th scope="col">RISK</th>
+      <th scope="col">TARGET</th>
+      <th scope="col">REWARD</th>
+      <th scope="col">RISK REWARD</th>
+      <th scope="col">EXIT PRICE</th>
+      <th scope="col">PROFIT LOSS</th>
+      <th scope="col">RR ACHIEVED</th>
+      <th scope="col">LEARNING</th>
+      <th scope="col">MISTAKES</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @trades.each do |trade| %>
+    <tr>
+        <td><%=link_to trade.id, trade %></td>
+        <td><%= trade.date&.strftime('%d - %m - %Y') %></td>
+        <td><%= trade.scrip %></td>
+        <td><%= trade.position %></td>
+        <td><%= trade.conviction %></td>
+        <td><%= trade.trade_reason %></td>
+        <td><%= trade.quantity %></td>
+        <td><%= trade.entry_price %></td>
+        <td><%= trade.stoploss %></td>
+        <td><%= trade.risk %></td>
+        <td><%= trade.target %></td>
+        <td><%= trade.reward %></td>
+        <td><%= trade.riskreward %></td>
+        <td><%= trade.exit_price %></td>
+        <td><%= trade.profit_loss %></td>
+        <td><%= trade.rr_achieved %></td>
+        <td><%= trade.learning %></td>
+        <td><%= trade.mistakes %></td>
+        <!-- <td><%#= link_to trade.strike_price, trade %></td> -->
+        <!-- <td><%#= trade.expiry_date&.strftime('%d - %m - %Y') %></td> -->
+    </tr>
+      <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New Trade", new_trade_path %>

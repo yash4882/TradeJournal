@@ -1,0 +1,28 @@
+
+<p><%= @trade.id %></p>
+<p><%= @trade.date&.strftime('%d - %m - %Y') %></p>
+<p><%= @trade.scrip %></p>
+<p><%= @trade.position %></p>
+<p><%= @trade.conviction %></p>
+<p><%= @trade.trade_reason %></p>
+<p><%= @trade.quantity %></p>
+<p><%= @trade.entry_price %></p>
+<p><%= @trade.stoploss %></p>
+<p><%= @trade.risk %></p>
+<p><%= @trade.target %></p>
+<p><%= @trade.reward %></p>
+<p><%= @trade.riskreward %></p>
+<p><%= @trade.exit_price %></p>
+<p><%= @trade.profit_loss %></p>
+<p><%= @trade.rr_achieved %></p>
+<p><%= @trade.learning %></p>
+<p><%= @trade.mistakes %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_trade_path(@trade) %></li>
+  <li><%= link_to "Destroy", trade_path(@trade), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+  <li><%= link_to "Back", :back %></li>
+</ul>

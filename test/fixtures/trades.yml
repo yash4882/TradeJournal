@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  todays_date: 2023-06-08 11:13:46
+  exchange: MyString
+  strike_price: 1
+  call_put: MyString
+  lot_size: 1
+  number_of_shares: 1
+  open_price: 1
+  close_price: 1
+  stoploss: 1
+  target: 1
+  profit_loss: 1
+  brokerage: 1
+  expiry_date: 2023-06-08 11:13:46
+  review: MyString
+
+two:
+  todays_date: 2023-06-08 11:13:46
+  exchange: MyString
+  strike_price: 1
+  call_put: MyString
+  lot_size: 1
+  number_of_shares: 1
+  open_price: 1
+  close_price: 1
+  stoploss: 1
+  target: 1
+  profit_loss: 1
+  brokerage: 1
+  expiry_date: 2023-06-08 11:13:46
+  review: MyString

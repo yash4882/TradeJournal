@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  port: 5432
+  username: postgres
+  password: postgres
+  host: localhost
+
+development:
+  <<: *default
+  database: trade-journal_development
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+
+test:
+  <<: *default
+  database: trade-journal_test
