@@ -1,23 +1,59 @@
-
-<p><%= @trade.id %></p>
-<p><%= @trade.date&.strftime('%d - %m - %Y') %></p>
-<p><%= @trade.scrip %></p>
-<p><%= @trade.position %></p>
-<p><%= @trade.conviction %></p>
-<p><%= @trade.trade_reason %></p>
-<p><%= @trade.quantity %></p>
-<p><%= @trade.entry_price %></p>
-<p><%= @trade.stoploss %></p>
-<p><%= @trade.risk %></p>
-<p><%= @trade.target %></p>
-<p><%= @trade.reward %></p>
-<p><%= @trade.riskreward %></p>
-<p><%= @trade.exit_price %></p>
-<p><%= @trade.profit_loss %></p>
-<p><%= @trade.rr_achieved %></p>
-<p><%= @trade.learning %></p>
-<p><%= @trade.mistakes %></p>
-
+<table class="table table-bordered">
+  <thead class="table-success">
+    <tr>
+      <th scope="col">S.NO.</th>
+      <th scope="col">DATE</th>
+      <th scope="col">SCRIP</th>
+      <th scope="col">POSITION</th>
+      <th scope="col">QUANTITY</th>
+      <th scope="col">ENTRY PRICE</th>
+      <th scope="col">STOPLOSS</th>
+      <th scope="col">RISK</th>
+      <th scope="col">TARGET</th>
+      <th scope="col">REWARD</th>
+      <th scope="col">RISK REWARD</th>
+      <th scope="col">EXIT PRICE</th>
+      <th scope="col">PROFIT LOSS</th>
+      <th scope="col">RR ACHIEVED</th>
+      <th scope="col">LEARNING</th>
+      <th scope="col">MISTAKES</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+          <!-- S.NO. -->
+        <td><%=link_to @trade.id, @trade %></td>
+        <!-- DATE -->
+        <td><%= @trade.date&.strftime('%d - %m - %Y') %></td>
+        <!-- SCRIP -->
+        <td><%= @trade.scrip %></td>
+        <!-- POSITION -->
+        <td><%= @trade.position %></td>
+        <!-- QUANTITY -->
+        <td><%= @trade.quantity %></td>
+        <!-- ENTRY PRICE -->
+        <td><%= @trade.entry_price %></td>
+        <!-- STOPLOSS -->
+        <td><%= @trade.stoploss %></td>
+        <!-- RISK -->
+        <td><%= @trade.risk%></td>
+        <!-- TARGET -->
+        <td><%= @trade.target %></td>
+        <!-- REWARD -->
+        <td><%= @trade.reward %></td>
+        <!-- RISK REWARD -->
+        <td><%= @trade.riskreward %></td>
+        <!-- EXIT PRICE --> 
+        <td><%= @trade.exit_price %></td>
+        <!-- PROFIT LOSS -->
+        <td><%= @trade.profit_loss%></td>
+        <!-- RR ACHIEVED -->
+        <td><%= @trade.rr_achieved %></td>
+      <td><%= @trade.learning %></td>
+      <td><%= @trade.mistakes %></td>
+    </tr>
+  </tbody>
+</table>
 <ul>
   <li><%= link_to "Edit", edit_trade_path(@trade) %></li>
   <li><%= link_to "Destroy", trade_path(@trade), data: {

@@ -6,8 +6,6 @@
       <th scope="col">DATE</th>
       <th scope="col">SCRIP</th>
       <th scope="col">POSITION</th>
-      <th scope="col">CONVICTION</th>
-      <th scope="col">REASON</th>
       <th scope="col">QUANTITY</th>
       <th scope="col">ENTRY PRICE</th>
       <th scope="col">STOPLOSS</th>
@@ -18,33 +16,42 @@
       <th scope="col">EXIT PRICE</th>
       <th scope="col">PROFIT LOSS</th>
       <th scope="col">RR ACHIEVED</th>
-      <th scope="col">LEARNING</th>
-      <th scope="col">MISTAKES</th>
+      <th scope="col">DETAILS</th>
     </tr>
   </thead>
   <tbody>
       <% @trades.each do |trade| %>
     <tr>
+        <!-- S.NO. -->
         <td><%=link_to trade.id, trade %></td>
+        <!-- DATE -->
         <td><%= trade.date&.strftime('%d - %m - %Y') %></td>
+        <!-- SCRIP -->
         <td><%= trade.scrip %></td>
+        <!-- POSITION -->
         <td><%= trade.position %></td>
-        <td><%= trade.conviction %></td>
-        <td><%= trade.trade_reason %></td>
+        <!-- QUANTITY -->
         <td><%= trade.quantity %></td>
+        <!-- ENTRY PRICE -->
         <td><%= trade.entry_price %></td>
+        <!-- STOPLOSS -->
         <td><%= trade.stoploss %></td>
-        <td><%= trade.risk %></td>
+        <!-- RISK -->
+        <td><%= trade.risk%></td>
+        <!-- TARGET -->
         <td><%= trade.target %></td>
+        <!-- REWARD -->
         <td><%= trade.reward %></td>
+        <!-- RISK REWARD -->
         <td><%= trade.riskreward %></td>
+        <!-- EXIT PRICE --> 
         <td><%= trade.exit_price %></td>
-        <td><%= trade.profit_loss %></td>
+        <!-- PROFIT LOSS -->
+        <td><%= trade.profit_loss%></td>
+        <!-- RR ACHIEVED -->
         <td><%= trade.rr_achieved %></td>
-        <td><%= trade.learning %></td>
-        <td><%= trade.mistakes %></td>
-        <!-- <td><%#= link_to trade.strike_price, trade %></td> -->
-        <!-- <td><%#= trade.expiry_date&.strftime('%d - %m - %Y') %></td> -->
+
+        <td><%= link_to "DETAILS", trade, class:"btn btn-secondary" %></td>
     </tr>
       <% end %>
   </tbody>

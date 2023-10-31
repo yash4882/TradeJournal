@@ -12,12 +12,12 @@
 
   <div>
     <%= form.label :Position %>
-    <%= form.text_field :position, ['LONG', 'SHORT'] %>
+    <%= form.select :position, ['LONG', 'SHORT'] %>
   </div>
 
   <div>
     <%= form.label :Conviction %>
-    <%= form.text_field :conviction %>
+    <%= form.select :conviction, ['HIGH', 'MEDIUM', 'LOW'] %>
   </div>
 
   <div>
@@ -41,38 +41,13 @@
   </div>
 
   <div>
-    <%= form.label :RiskInPoints %>
-    <%= form.number_field :risk %>
-  </div>
-
-  <div>
     <%= form.label :Target %>
     <%= form.number_field :target %>
   </div>
 
   <div>
-    <%= form.label :Reward %>
-    <%= form.text_field :reward %>
-  </div>
-
-  <div>
-    <%= form.label :RiskReward %>
-    <%= form.text_field :riskreward %>
-  </div>
-
-  <div>
     <%= form.label :ExitPrice %>
     <%= form.number_field :exit_price %>
-  </div>
-
-  <div>
-    <%= form.label :ProfitLoss %>
-    <%= form.select :profit_loss, ['PROFIT', 'LOSS'] %>
-  </div>
-
-  <div>
-    <%= form.label :RR_Achieved %>
-    <%= form.text_field :rr_achieved %>
   </div>
 
   <div>

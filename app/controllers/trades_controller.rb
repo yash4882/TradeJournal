@@ -1,6 +1,7 @@
 class TradesController < ApplicationController
   before_action :authenticate_user!
-  
+  after_action :calculation, only: [:create, :update]
+
   def index
     @trades = Trade.all
   end
@@ -49,4 +50,17 @@ class TradesController < ApplicationController
       params.require(:trade).permit(:date, :scrip, :position, :conviction, :trade_reason, :quantity, :entry_price, :stoploss, :risk, :stoploss, :target, :reward, :riskreward, :exit_price, :profit_loss, :rr_achieved, :learning, :mistakes)
     end
 
+    def calculation
+      risk = (@trade.stoploss.to_f - @trade.entry_price.to_f) * @trade.quantity.to_i
+
+      reward = (@trade.target.to_f - @trade.entry_price.to_f) * @trade.quantity.to_i
+  
+      riskreward = (reward / risk.abs)
+
+      pnl =  (@trade.exit_price.to_f - @trade.entry_price.to_f) * @trade.quantity.to_i
+
+      rr_achieved = (risk.abs + reward) / pnl.to_i
+
+      @trade.update(risk:risk, reward:reward, riskreward:riskreward, profit_loss:pnl ,rr_achieved:rr_achieved)
+    end
 end
