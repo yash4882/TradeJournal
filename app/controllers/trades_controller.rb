@@ -1,5 +1,6 @@
 class TradesController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_trade, only: %i[ show edit update destroy ]
   after_action :calculation, only: [:create, :update]
 
   def index
@@ -7,7 +8,6 @@ class TradesController < ApplicationController
   end
 
   def show
-    @trade = Trade.find(params[:id])
   end
 
   def new
@@ -25,11 +25,9 @@ class TradesController < ApplicationController
   end
 
   def edit
-    @trade = Trade.find(params[:id])
   end
 
   def update
-    @trade = Trade.find(params[:id])
 
     if @trade.update(trade_params)
       redirect_to @trade
@@ -39,7 +37,6 @@ class TradesController < ApplicationController
   end
 
   def destroy
-    @trade = Trade.find(params[:id])
     @trade.destroy
 
     redirect_to root_path, status: :see_other
@@ -48,6 +45,10 @@ class TradesController < ApplicationController
   private
     def trade_params
       params.require(:trade).permit(:date, :scrip, :position, :conviction, :trade_reason, :quantity, :entry_price, :stoploss, :risk, :stoploss, :target, :reward, :riskreward, :exit_price, :profit_loss, :rr_achieved, :learning, :mistakes)
+    end
+
+    def set_trade
+      @trade = Trade.find(params[:id])
     end
 
     def calculation

@@ -1,0 +1,21 @@
+<h1 class="text-center mt-5">Product</h1>
+<div class="container">
+  <div class="row ">
+  	<%@products.each do |product|%>
+  	<div class="col-3 my-4">
+  		<div class="card shadow-lg">
+  			<div class="img-hover img-hover-zoom--brightness">
+  				<img class="card-img-top" >
+  			</div>
+  			<div class="card-body">
+  				<h5 class="card-title"><%= link_to product.title, product %></h5>
+  				<p class="card-text"><%= product.description %></p>
+  				<p class="card-text"><%= number_to_currency(product.price, unit: '₹') %></p>
+  				<%= link_to "****", product ,class:"btn-primary"%>
+  			</div>
+  		</div>
+  	</div>
+  	<%end%>
+  	<%= link_to "New Product", new_product_path %>
+  </div>
+</div>

@@ -1,4 +1,14 @@
 <%= form_with model: trade do |form| %>
+
+  <% if trade.errors.any? %>
+    <h2><%= pluralize(trade.errors.count, "error") %> prohibited this trade from being saved:</h2>
+    <ul>
+      <% trade.errors.each do |error| %>
+      <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
   <div>
     <%= form.label :Date %>
     <%= form.date_field :date %>
