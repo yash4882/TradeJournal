@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  get 'store/index'
-  devise_for :users
   root to: "homes#index"
+  resources :line_items
+  resources :carts
+  devise_for :users
   resources :trades
+  get 'store/index'
   resources :products
 end
+
+  

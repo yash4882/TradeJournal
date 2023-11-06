@@ -1,2 +1,21 @@
-<h1>Store#index</h1>
-<p>Find me in app/views/store/index.html.erb</p>
+<h1 class="text-center mt-5">Products</h1>
+<div class="container">
+  <div class="row ">
+  	<%@products.each do |product|%>
+  	<div class="col-3 my-4">
+  		<div class="card shadow-lg">
+  			<div class="img-hover img-hover-zoom--brightness">
+  				<img class="card-img-top" src=<%= asset_path(product.image_url)%> >
+  			</div>
+  			<div class="card-body">
+  				<h5 class="card-title"><%= link_to product.title, product %></h5>
+  				<p class="card-text"><%= product.description %></p>
+  				<p class="card-text"><%= number_to_currency(product.price, unit: '₹') %></p>
+          <%= button_to 'Add to Cart', line_items_path(product_id: product), class:"btn btn-success" %>
+  			</div>
+  		</div>
+  	</div>
+  	<%end%>
+  	<%= link_to "New Product", new_product_path %>
+  </div>
+</div>
