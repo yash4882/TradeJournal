@@ -12,5 +12,6 @@
 		</tfoot>
 	</table>
 	<%= button_to 'Empty Cart', cart, method: :delete, class: "btn btn-danger" %>
+	<%= button_to 'Checkout', new_order_path, method: :get, class: "btn btn-success" %>
 </div>
 

@@ -1,0 +1,19 @@
+<fieldset data-payment-target="additionalFields" data-type="Debit card">
+	<h4>Enter Debit Card Details</h4>
+	<div class="my-5">
+		<%= form.label :card_holder_name %>
+		<%= form.password_field :card_holder_name, class: "input-field" %>
+	</div>
+	<div class="my-5">
+		<%= form.label :debit_card_number %>
+		<%= form.password_field :debit_card_number, class: "input-field" %>
+	</div>
+		<div class="my-5">
+		<%= form.label :cvc %>
+		<%= form.password_field :cvc, class: "input-field" %>
+	</div>
+	<div class="my-5">
+	<%= form.label :expiration_date %>
+	<%= form.text_field :expiration_date, class: "input-field", size:9, placeholder: "e.g. 03/22" %>
+	</div>
+</fieldset>
