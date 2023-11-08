@@ -60,6 +60,30 @@ class LineItemsController < ApplicationController
     end
   end
 
+  def item_delete
+    @line_item = LineItem.find(params[:id])
+    @line_item.destroy
+    respond_to do |format|
+      format.html { redirect_to store_index_url, notice: "Line item was successfully destroyed." }
+      format.json { head :no_content }
+    end
+  end
+
+  def increment
+    @line_item = LineItem.find(params[:id])
+    @line_item.increment
+    @line_item.save
+    redirect_to cart_path # Replace with your desired redirect path
+  end
+
+  def decrement
+    @line_item = LineItem.find(params[:id])
+    @line_item.decrement
+    @line_item.save
+    redirect_to cart_path # Replace with your desired redirect path
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_line_item

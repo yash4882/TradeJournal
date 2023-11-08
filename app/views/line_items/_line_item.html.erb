@@ -11,4 +11,16 @@
   <td>
     <%= number_to_currency(line_item.total_price, unit: '₹') %>
   </td>
+  <td>
+    <%= link_to '(+)', increment_line_item_url(line_item) %>
+
+  </td>
+  <td>
+    <%= link_to '(-)', decrement_line_item_path(line_item) %>
+
+  </td>
+  <td>
+    <%= link_to '(x)', item_delete_line_item_url(line_item)  %>
+  </td>
+
 </tr>
