@@ -47,9 +47,9 @@
         <!-- EXIT PRICE --> 
         <td><%= trade.exit_price %></td>
         <!-- PROFIT LOSS -->
-        <td><%= trade.profit_loss%></td>
+        <td><%= number_with_precision trade.profit_loss, :precision => 2 %></td>
         <!-- RR ACHIEVED -->
-        <td><%= trade.rr_achieved %></td>
+        <td><%= number_with_precision trade.rr_achieved, :precision => 2 %></td>
 
         <td><%= link_to "DETAILS", trade, class:"btn btn-secondary" %></td>
     </tr>
