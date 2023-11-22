@@ -28,6 +28,11 @@
     <%= form.label :price %>
     <%= form.text_field :price %>
   </div>
+
+  <div>
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
+
     
   <div class="inline">
     <%= form.submit %>

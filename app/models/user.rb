@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :trades
+  has_many :articles
+  has_many :products
+
 end

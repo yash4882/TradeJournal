@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'articles/index'
   resources :orders
   root to: "homes#index"
 
@@ -15,6 +16,8 @@ Rails.application.routes.draw do
   resources :trades
   get 'store/index'
   resources :products
+  resources :articles
+  
 end
 
   
