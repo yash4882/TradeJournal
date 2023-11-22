@@ -1,7 +1,6 @@
 <table class="table table-bordered">
   <thead class="table-success">
     <tr>
-      <th scope="col">S.NO.</th>
       <th scope="col">DATE</th>
       <th scope="col">SCRIP</th>
       <th scope="col">POSITION</th>
@@ -21,8 +20,6 @@
   </thead>
   <tbody>
     <tr>
-          <!-- S.NO. -->
-        <td><%=link_to @trade.id, @trade %></td>
         <!-- DATE -->
         <td><%= @trade.date&.strftime('%d - %m - %Y') %></td>
         <!-- SCRIP -->

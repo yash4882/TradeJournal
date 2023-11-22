@@ -4,7 +4,9 @@ class TradesController < ApplicationController
   after_action :calculation, only: [:create, :update]
 
   def index
-    @trades = Trade.all
+    # @trades = Trade.all
+    @trades = current_user.trades
+
   end
 
   def show
@@ -44,7 +46,7 @@ class TradesController < ApplicationController
 
   private
     def trade_params
-      params.require(:trade).permit(:date, :scrip, :position, :conviction, :trade_reason, :quantity, :entry_price, :stoploss, :risk, :stoploss, :target, :reward, :riskreward, :exit_price, :profit_loss, :rr_achieved, :learning, :mistakes)
+      params.require(:trade).permit(:date, :scrip, :position, :conviction, :trade_reason, :quantity, :entry_price, :stoploss, :risk, :stoploss, :target, :reward, :riskreward, :exit_price, :profit_loss, :rr_achieved, :learning, :mistakes, :user_id)
     end
 
     def set_trade
