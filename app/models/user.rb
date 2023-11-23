@@ -7,5 +7,4 @@ class User < ApplicationRecord
   has_many :trades
   has_many :articles
   has_many :products
-
 end

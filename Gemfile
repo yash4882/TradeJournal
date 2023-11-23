@@ -76,4 +76,7 @@ gem "cssbundling-rails"
 gem 'devise'
 
 gem "letter_opener", group: :development
+
 gem "whenever", "~> 1.0"
+
+gem "image_processing", ">= 1.2"

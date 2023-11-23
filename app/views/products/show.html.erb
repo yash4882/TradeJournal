@@ -1,5 +1,5 @@
 <div class="img-hover img-hover-zoom--brightness">
-  <img class="card-img-top" src=<%= asset_path(@product.image_url)%> >
+  <%= image_tag @product.image_url if @product.image_url.attached? %>
 </div>
 <li><%=@product.id%></li>
 <li><%=@product.title%></li>
@@ -17,3 +17,4 @@
 <% end %>
   <li><%= link_to "Back", :back %></li>
 </ul>
+
